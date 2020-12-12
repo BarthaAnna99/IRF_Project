@@ -94,6 +94,8 @@ namespace Project_scheduler
             this.ClientSize = new System.Drawing.Size(1314, 779);
             this.Controls.Add(this.FoPanel);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(1332, 826);
+            this.MinimumSize = new System.Drawing.Size(1332, 826);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
