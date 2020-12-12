@@ -63,7 +63,7 @@ namespace Project_scheduler
             this.btnKanban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKanban.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKanban.ForeColor = System.Drawing.Color.White;
-            this.btnKanban.Location = new System.Drawing.Point(0, 109);
+            this.btnKanban.Location = new System.Drawing.Point(0, 149);
             this.btnKanban.Name = "btnKanban";
             this.btnKanban.Size = new System.Drawing.Size(165, 45);
             this.btnKanban.TabIndex = 0;
@@ -79,7 +79,7 @@ namespace Project_scheduler
             this.btnJelentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJelentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJelentes.ForeColor = System.Drawing.Color.White;
-            this.btnJelentes.Location = new System.Drawing.Point(0, 177);
+            this.btnJelentes.Location = new System.Drawing.Point(0, 217);
             this.btnJelentes.Name = "btnJelentes";
             this.btnJelentes.Size = new System.Drawing.Size(165, 45);
             this.btnJelentes.TabIndex = 1;

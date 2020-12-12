@@ -72,7 +72,7 @@ namespace Project_scheduler
             this.lb_Backlog.AutoSize = true;
             this.lb_Backlog.BackColor = System.Drawing.Color.Transparent;
             this.lb_Backlog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Backlog.Location = new System.Drawing.Point(124, 120);
+            this.lb_Backlog.Location = new System.Drawing.Point(108, 120);
             this.lb_Backlog.Name = "lb_Backlog";
             this.lb_Backlog.Size = new System.Drawing.Size(82, 25);
             this.lb_Backlog.TabIndex = 12;
@@ -83,7 +83,7 @@ namespace Project_scheduler
             this.lb_Kiv.AutoSize = true;
             this.lb_Kiv.BackColor = System.Drawing.Color.Transparent;
             this.lb_Kiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Kiv.Location = new System.Drawing.Point(383, 120);
+            this.lb_Kiv.Location = new System.Drawing.Point(378, 120);
             this.lb_Kiv.Name = "lb_Kiv";
             this.lb_Kiv.Size = new System.Drawing.Size(112, 25);
             this.lb_Kiv.TabIndex = 13;
@@ -94,7 +94,7 @@ namespace Project_scheduler
             this.lb_Foly.AutoSize = true;
             this.lb_Foly.BackColor = System.Drawing.Color.Transparent;
             this.lb_Foly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Foly.Location = new System.Drawing.Point(668, 120);
+            this.lb_Foly.Location = new System.Drawing.Point(651, 120);
             this.lb_Foly.Name = "lb_Foly";
             this.lb_Foly.Size = new System.Drawing.Size(114, 25);
             this.lb_Foly.TabIndex = 14;
@@ -105,7 +105,7 @@ namespace Project_scheduler
             this.lb_Kesz.AutoSize = true;
             this.lb_Kesz.BackColor = System.Drawing.Color.Transparent;
             this.lb_Kesz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Kesz.Location = new System.Drawing.Point(954, 120);
+            this.lb_Kesz.Location = new System.Drawing.Point(957, 120);
             this.lb_Kesz.Name = "lb_Kesz";
             this.lb_Kesz.Size = new System.Drawing.Size(57, 25);
             this.lb_Kesz.TabIndex = 15;
