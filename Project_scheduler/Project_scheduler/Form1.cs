@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_scheduler.Entities;
 
 namespace Project_scheduler
 {
@@ -16,5 +17,23 @@ namespace Project_scheduler
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            UCKanban uc = new UCKanban();
+            FoPanel.Controls.Clear();
+            FoPanel.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
+        private void btnKanban_Click(object sender, EventArgs e)
+        {
+            UCKanban uc = new UCKanban();
+            FoPanel.Controls.Clear();
+            FoPanel.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
+
     }
 }
