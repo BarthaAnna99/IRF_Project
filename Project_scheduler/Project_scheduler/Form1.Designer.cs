@@ -106,9 +106,9 @@ namespace Project_scheduler
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel FoPanel;
         private System.Windows.Forms.Button btnKanban;
         private System.Windows.Forms.Button btnJelentes;
+        public System.Windows.Forms.Panel FoPanel;
     }
 }
 

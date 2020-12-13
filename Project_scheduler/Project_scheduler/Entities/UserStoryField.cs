@@ -26,14 +26,17 @@ namespace Project_scheduler.Entities
                 if (_priority == Priority.Alacsony)
                 {
                     BackColor = ColorTranslator.FromHtml("#8b9476");
+                    FlatAppearance.MouseOverBackColor = this.BackColor;
                 }
                 else if (_priority == Priority.Közepes)
                 {
                     BackColor = ColorTranslator.FromHtml("#fff7f5");
+                    FlatAppearance.MouseOverBackColor = this.BackColor;
                 }
                 else if (_priority == Priority.Magas)
                 {
                     BackColor = ColorTranslator.FromHtml("#c75266");
+                    FlatAppearance.MouseOverBackColor = this.BackColor;
                 }
             }
         }
@@ -43,12 +46,13 @@ namespace Project_scheduler.Entities
         {
             Height = 80;
             Width = 190;
+            Font = new Font(Font.FontFamily, 9);
             FlatAppearance.BorderSize = 1;
             FlatAppearance.BorderColor = Color.Black;
-            FlatAppearance.MouseOverBackColor = ColorTranslator.FromHtml("#fff7f5");
-            FlatStyle = FlatStyle.Flat;
             BackColor = ColorTranslator.FromHtml("#fff7f5");
-
+            FlatAppearance.MouseOverBackColor = this.BackColor;
+            FlatStyle = FlatStyle.Flat;
+            
             MouseDown += UserStoryField_MouseDown;
             MouseMove += UserStoryField_MouseMove;
             MouseUp += UserStoryField_MouseUp;

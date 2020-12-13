@@ -37,6 +37,7 @@ namespace Project_scheduler
             this.lb_Foly = new System.Windows.Forms.Label();
             this.lb_Kesz = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pERIODBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pERIODBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -115,6 +116,21 @@ namespace Project_scheduler
             this.comboBox1.TabIndex = 17;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(245)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(245)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(22, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 36);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Új";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // pERIODBindingSource
             // 
             this.pERIODBindingSource.DataSource = typeof(Project_scheduler.PERIOD);
@@ -124,6 +140,7 @@ namespace Project_scheduler
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lb_Kesz);
             this.Controls.Add(this.lb_Foly);
@@ -148,5 +165,6 @@ namespace Project_scheduler
         private System.Windows.Forms.Label lb_Kesz;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource pERIODBindingSource;
+        private System.Windows.Forms.Button button1;
     }
 }

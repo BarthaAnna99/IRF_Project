@@ -19,7 +19,6 @@ namespace Project_scheduler
         {
             InitializeComponent();
             
-
             var idoszakok = (from x in context.PERIODs select x.PERIOD_NAME).ToList();
             comboBox1.DataSource = idoszakok;
             comboBox1.SelectedItem = "12.14. - 12.20.";
@@ -27,7 +26,12 @@ namespace Project_scheduler
             GetKanbanField();
         }
 
-        private void GetKanbanField()
+        private void UCKanban_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GetKanbanField();
+        }
+
+        public void GetKanbanField()
         {
             panel_All.Controls.Clear();
             string idoszak = comboBox1.SelectedItem.ToString();
@@ -79,6 +83,7 @@ namespace Project_scheduler
                 us.Text = item.TASK + "\n" + item.NAME;
                 panel_All.Controls.Add(us);
 
+
                 us.MouseUp += Us_MouseUp;
                 szamlalo2++;
             }
@@ -114,25 +119,6 @@ namespace Project_scheduler
             }
         }
 
-        //private void GetuserStoryPrioritiesList()
-        //{
-        //    //var meglevo = from i in userStoryPriorities
-        //    //              select i.ID;
-
-        //    //var parositas = from x in context.USERSTORies
-        //    //                where !meglevo.Contains(x.USERSTORY_SK)
-        //    //                select x;
-        //    //foreach (var item in parositas)
-        //    //{
-        //    //    UserStoryPriority pr = new UserStoryPriority();
-        //    //    pr.ID = item.USERSTORY_SK;
-        //    //    pr.priority = Priority.Közepes;
-        //    //    userStoryPriorities.Add(pr);
-        //    //}
-
-        //    //listBox1.DataSource = meglevo.ToList();
-        //    dataGridView1.DataSource = userStoryPriorities;
-        //}
 
         private void Us_MouseUp(object sender, MouseEventArgs e)
         {
@@ -238,6 +224,12 @@ namespace Project_scheduler
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetKanbanField();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FUserStory fus = new FUserStory(0);
+            fus.ShowDialog();
         }
     }
 }
