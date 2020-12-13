@@ -13,23 +13,159 @@ namespace Project_scheduler
 {
     public partial class UCKanban : UserControl
     {
+        KanbanDatabaseEntities context = new KanbanDatabaseEntities();
+        BindingList<UserStoryPriority> userStoryPriorities = new BindingList<UserStoryPriority>();
+
         public UCKanban()
         {
             InitializeComponent();
-
-            for (int i = 0; i < 4; i++)
+            
+            for (int i = 1; i <= 19; i++)
             {
-                for (int j = 0; j < 4; j++)
-                {
-                    UserStoryField us = new UserStoryField();
-                    us.Top = j * 80 + j * 10;
-                    us.Left = 5 + i * 190 + i * 20;
-                    panel_All.Controls.Add(us);
+                userStoryPriorities.Add(new UserStoryPriority { ID = i, priority = Priority.Közepes });
+            }
 
-                    us.MouseUp += Us_MouseUp;
+            var idoszakok = (from x in context.PERIODs select x.PERIOD_NAME).ToList();
+            comboBox1.DataSource = idoszakok;
+            comboBox1.SelectedItem = "12.14. - 12.20.";
+
+            GetKanbanField();
+        }
+
+        private void GetKanbanField()
+        {
+            panel_All.Controls.Clear();
+            string idoszak = comboBox1.SelectedItem.ToString();
+
+            var idoszak_backlog = from u in context.USERSTORies
+                                  join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
+                                  join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
+                                  where p.PERIOD_NAME == idoszak && u.STATUS == "Backlog"
+                                  select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS };
+            var idoszak_kivalasztva = from u in context.USERSTORies
+                                  join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
+                                  join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
+                                  where p.PERIOD_NAME == idoszak && u.STATUS == "Kiválasztva"
+                                  select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS };
+            var idoszak_folyamatban = from u in context.USERSTORies
+                                      join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
+                                      join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
+                                      where p.PERIOD_NAME == idoszak && u.STATUS == "Folyamatban"
+                                      select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS };
+            var idoszak_kesz = from u in context.USERSTORies
+                                     join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
+                                     join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
+                                     where p.PERIOD_NAME == idoszak && u.STATUS == "Kész"
+                                     select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS };
+
+            int szamlalo1 = 0;
+            foreach (var item in idoszak_backlog)
+            {
+                var enumkapcs = from x in userStoryPriorities
+                                where x.ID == item.USERSTORY_SK
+                                select x;
+
+                UserStoryField us = new UserStoryField();
+                us.Top = szamlalo1 * 80 + szamlalo1 * 10;
+                us.Left = 5;
+                us.ID = item.USERSTORY_SK;
+                foreach (var pr in enumkapcs)
+                {
+                    us.Priority = pr.priority;
                 }
+                us.Text = item.TASK + "\n" + item.NAME;
+                panel_All.Controls.Add(us);
+
+                us.MouseUp += Us_MouseUp;
+                szamlalo1++;
+            }
+
+            int szamlalo2 = 0;
+            foreach (var item in idoszak_kivalasztva)
+            {
+                var enumkapcs = from x in userStoryPriorities
+                                where x.ID == item.USERSTORY_SK
+                                select x;
+
+                UserStoryField us = new UserStoryField();
+                us.Top = szamlalo2 * 80 + szamlalo2 * 10;
+                us.Left = 5 + 190 + 20;
+                us.ID = item.USERSTORY_SK;
+                foreach (var pr in enumkapcs)
+                {
+                    us.Priority = pr.priority;
+                }
+                us.Text = item.TASK + "\n" + item.NAME;
+                panel_All.Controls.Add(us);
+
+                us.MouseUp += Us_MouseUp;
+                szamlalo2++;
+            }
+
+            int szamlalo3 = 0;
+            foreach (var item in idoszak_folyamatban)
+            {
+                var enumkapcs = from x in userStoryPriorities
+                                where x.ID == item.USERSTORY_SK
+                                select x;
+
+                UserStoryField us = new UserStoryField();
+                us.Top = szamlalo3 * 80 + szamlalo3 * 10;
+                us.Left = 5 + 2 * 190 + 2 * 20;
+                us.ID = item.USERSTORY_SK;
+                foreach (var pr in enumkapcs)
+                {
+                    us.Priority = pr.priority;
+                }
+                us.Text = item.TASK + "\n" + item.NAME;
+                panel_All.Controls.Add(us);
+
+                us.MouseUp += Us_MouseUp;
+                szamlalo3++;
+            }
+
+            int szamlalo4 = 0;
+            foreach (var item in idoszak_kesz)
+            {
+                var enumkapcs = from x in userStoryPriorities
+                                where x.ID == item.USERSTORY_SK
+                                select x;
+
+                UserStoryField us = new UserStoryField();
+                us.Top = szamlalo4 * 80 + szamlalo4 * 10;
+                us.Left = 5 + 3 * 190 + 3 * 20;
+                us.ID = item.USERSTORY_SK;
+                foreach (var pr in enumkapcs)
+                {
+                    us.Priority = pr.priority;
+                }
+                us.Text = item.TASK + "\n" + item.NAME;
+                panel_All.Controls.Add(us);
+
+                us.MouseUp += Us_MouseUp;
+                szamlalo4++;
             }
         }
+
+        //private void GetuserStoryPrioritiesList()
+        //{
+        //    //var meglevo = from i in userStoryPriorities
+        //    //              select i.ID;
+
+        //    //var parositas = from x in context.USERSTORies
+        //    //                where !meglevo.Contains(x.USERSTORY_SK)
+        //    //                select x;
+        //    //foreach (var item in parositas)
+        //    //{
+        //    //    UserStoryPriority pr = new UserStoryPriority();
+        //    //    pr.ID = item.USERSTORY_SK;
+        //    //    pr.priority = Priority.Közepes;
+        //    //    userStoryPriorities.Add(pr);
+        //    //}
+
+        //    //listBox1.DataSource = meglevo.ToList();
+        //    dataGridView1.DataSource = userStoryPriorities;
+        //}
 
         private void Us_MouseUp(object sender, MouseEventArgs e)
         {
@@ -59,13 +195,82 @@ namespace Project_scheduler
 
             for (int i = 5; i <= 635; i += 210)
             {
+
                 int szamlalo = 0;
                 foreach (UserStoryField row_item in panel_All.Controls.OfType<UserStoryField>().Where(j => j.Left == i).OrderBy(j => j.Top))
                 {
                     row_item.Top = szamlalo * 80 + szamlalo * 10;
+                    var modositas = from x in context.USERSTORies
+                                    where row_item.ID == x.USERSTORY_SK
+                                    select x;
+                    if (row_item.Left == 5)
+                    {
+                        foreach (USERSTORY item in modositas)
+                        {
+                            item.STATUS = "Backlog";
+                        }
+                        try
+                        {
+                            context.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else if (row_item.Left == 215)
+                    {
+                        foreach (USERSTORY item in modositas)
+                        {
+                            item.STATUS = "Kiválasztva";
+                        }
+                        try
+                        {
+                            context.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else if (row_item.Left == 425)
+                    {
+                        foreach (USERSTORY item in modositas)
+                        {
+                            item.STATUS = "Folyamatban";
+                        }
+                        try
+                        {
+                            context.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else if (row_item.Left == 635)
+                    {
+                        foreach (USERSTORY item in modositas)
+                        {
+                            item.STATUS = "Kész";
+                        }
+                        try
+                        {
+                            context.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
                     szamlalo++;
                 }
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetKanbanField();
         }
     }
 }

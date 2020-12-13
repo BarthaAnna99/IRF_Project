@@ -29,13 +29,16 @@ namespace Project_scheduler
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel_All = new System.Windows.Forms.Panel();
-            this.lb_Idoszak = new System.Windows.Forms.Label();
             this.lb_Ev = new System.Windows.Forms.Label();
             this.lb_Backlog = new System.Windows.Forms.Label();
             this.lb_Kiv = new System.Windows.Forms.Label();
             this.lb_Foly = new System.Windows.Forms.Label();
             this.lb_Kesz = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pERIODBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pERIODBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_All
@@ -44,17 +47,6 @@ namespace Project_scheduler
             this.panel_All.Name = "panel_All";
             this.panel_All.Size = new System.Drawing.Size(1101, 607);
             this.panel_All.TabIndex = 8;
-            // 
-            // lb_Idoszak
-            // 
-            this.lb_Idoszak.AutoSize = true;
-            this.lb_Idoszak.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Idoszak.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Idoszak.Location = new System.Drawing.Point(475, 51);
-            this.lb_Idoszak.Name = "lb_Idoszak";
-            this.lb_Idoszak.Size = new System.Drawing.Size(209, 36);
-            this.lb_Idoszak.TabIndex = 7;
-            this.lb_Idoszak.Text = "12.14. - 12.20.";
             // 
             // lb_Ev
             // 
@@ -96,9 +88,9 @@ namespace Project_scheduler
             this.lb_Foly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Foly.Location = new System.Drawing.Point(651, 120);
             this.lb_Foly.Name = "lb_Foly";
-            this.lb_Foly.Size = new System.Drawing.Size(114, 25);
+            this.lb_Foly.Size = new System.Drawing.Size(125, 25);
             this.lb_Foly.TabIndex = 14;
-            this.lb_Foly.Text = "Folyamatba";
+            this.lb_Foly.Text = "Folyamatban";
             // 
             // lb_Kesz
             // 
@@ -111,20 +103,37 @@ namespace Project_scheduler
             this.lb_Kesz.TabIndex = 15;
             this.lb_Kesz.Text = "Kész";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(246)))));
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(469, 54);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(233, 44);
+            this.comboBox1.TabIndex = 17;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // pERIODBindingSource
+            // 
+            this.pERIODBindingSource.DataSource = typeof(Project_scheduler.PERIOD);
+            // 
             // UCKanban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lb_Kesz);
             this.Controls.Add(this.lb_Foly);
             this.Controls.Add(this.lb_Kiv);
             this.Controls.Add(this.lb_Backlog);
             this.Controls.Add(this.panel_All);
-            this.Controls.Add(this.lb_Idoszak);
             this.Controls.Add(this.lb_Ev);
             this.Name = "UCKanban";
             this.Size = new System.Drawing.Size(1150, 783);
+            ((System.ComponentModel.ISupportInitialize)(this.pERIODBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,11 +141,12 @@ namespace Project_scheduler
 
         #endregion
         private System.Windows.Forms.Panel panel_All;
-        private System.Windows.Forms.Label lb_Idoszak;
         private System.Windows.Forms.Label lb_Ev;
         private System.Windows.Forms.Label lb_Backlog;
         private System.Windows.Forms.Label lb_Kiv;
         private System.Windows.Forms.Label lb_Foly;
         private System.Windows.Forms.Label lb_Kesz;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource pERIODBindingSource;
     }
 }

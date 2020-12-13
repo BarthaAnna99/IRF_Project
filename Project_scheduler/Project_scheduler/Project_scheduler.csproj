@@ -74,6 +74,7 @@
     <Compile Include="Entities\UserStoryField.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Entities\UserStoryPriority.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +141,9 @@
       <DependentUpon>KanbanModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PERIOD.datasource" />
+    <None Include="Properties\DataSources\PERSON.datasource" />
+    <None Include="Properties\DataSources\USERSTORY.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
