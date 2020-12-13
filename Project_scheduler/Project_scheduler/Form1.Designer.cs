@@ -29,11 +29,10 @@ namespace Project_scheduler
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.FoPanel = new System.Windows.Forms.Panel();
-            this.btnKanban = new System.Windows.Forms.Button();
             this.btnJelentes = new System.Windows.Forms.Button();
+            this.btnKanban = new System.Windows.Forms.Button();
+            this.FoPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,13 +46,20 @@ namespace Project_scheduler
             this.panel1.Size = new System.Drawing.Size(168, 783);
             this.panel1.TabIndex = 0;
             // 
-            // FoPanel
+            // btnJelentes
             // 
-            this.FoPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FoPanel.BackgroundImage")));
-            this.FoPanel.Location = new System.Drawing.Point(164, 0);
-            this.FoPanel.Name = "FoPanel";
-            this.FoPanel.Size = new System.Drawing.Size(1150, 783);
-            this.FoPanel.TabIndex = 1;
+            this.btnJelentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(43)))), ((int)(((byte)(38)))));
+            this.btnJelentes.FlatAppearance.BorderSize = 0;
+            this.btnJelentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
+            this.btnJelentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJelentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJelentes.ForeColor = System.Drawing.Color.White;
+            this.btnJelentes.Location = new System.Drawing.Point(0, 217);
+            this.btnJelentes.Name = "btnJelentes";
+            this.btnJelentes.Size = new System.Drawing.Size(165, 45);
+            this.btnJelentes.TabIndex = 1;
+            this.btnJelentes.Text = "Jelentés";
+            this.btnJelentes.UseVisualStyleBackColor = false;
             // 
             // btnKanban
             // 
@@ -71,20 +77,13 @@ namespace Project_scheduler
             this.btnKanban.UseVisualStyleBackColor = false;
             this.btnKanban.Click += new System.EventHandler(this.btnKanban_Click);
             // 
-            // btnJelentes
+            // FoPanel
             // 
-            this.btnJelentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(43)))), ((int)(((byte)(38)))));
-            this.btnJelentes.FlatAppearance.BorderSize = 0;
-            this.btnJelentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
-            this.btnJelentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJelentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJelentes.ForeColor = System.Drawing.Color.White;
-            this.btnJelentes.Location = new System.Drawing.Point(0, 217);
-            this.btnJelentes.Name = "btnJelentes";
-            this.btnJelentes.Size = new System.Drawing.Size(165, 45);
-            this.btnJelentes.TabIndex = 1;
-            this.btnJelentes.Text = "Jelentés";
-            this.btnJelentes.UseVisualStyleBackColor = false;
+            this.FoPanel.BackgroundImage = global::Project_scheduler.Properties.Resources.form_hatter3;
+            this.FoPanel.Location = new System.Drawing.Point(164, 0);
+            this.FoPanel.Name = "FoPanel";
+            this.FoPanel.Size = new System.Drawing.Size(1150, 783);
+            this.FoPanel.TabIndex = 1;
             // 
             // Form1
             // 
