@@ -50,7 +50,7 @@ namespace Project_scheduler
             this.lb_Idoszak.AutoSize = true;
             this.lb_Idoszak.BackColor = System.Drawing.Color.Transparent;
             this.lb_Idoszak.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Idoszak.Location = new System.Drawing.Point(472, 51);
+            this.lb_Idoszak.Location = new System.Drawing.Point(475, 51);
             this.lb_Idoszak.Name = "lb_Idoszak";
             this.lb_Idoszak.Size = new System.Drawing.Size(209, 36);
             this.lb_Idoszak.TabIndex = 7;

@@ -13,6 +13,32 @@ namespace Project_scheduler.Entities
         int ox, oy;
         bool moving = false;
 
+        public int ID { get; set; }
+
+        private Priority _priority;
+
+        public Priority Priority
+        {
+            get { return _priority; }
+            set 
+            { 
+                _priority = value;
+                if (_priority == Priority.Alacsony)
+                {
+                    BackColor = ColorTranslator.FromHtml("#8b9476");
+                }
+                else if (_priority == Priority.Közepes)
+                {
+                    BackColor = ColorTranslator.FromHtml("#fff7f5");
+                }
+                else if (_priority == Priority.Magas)
+                {
+                    BackColor = ColorTranslator.FromHtml("#c75266");
+                }
+            }
+        }
+
+
         public UserStoryField()
         {
             Height = 80;
