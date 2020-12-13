@@ -110,8 +110,7 @@ namespace Project_scheduler.Entities
             if (e.Clicks == 2)
             {
                 moving = false;
-                FUserStory fus = new FUserStory();
-                /*DialogResult result = */
+                FUserStory fus = new FUserStory(ID);
                 fus.ShowDialog();
             }
         }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="KanbanDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="KanbanDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="PERIOD">
           <Key>
             <PropertyRef Name="PERIOD_SK" />
@@ -28,6 +28,7 @@
           <Property Name="PERSON_FK" Type="int" Nullable="false" />
           <Property Name="PERIOD_FK" Type="int" Nullable="false" />
           <Property Name="STATUS" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PRIORITY" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <Association Name="FK_USERSTORY_ToTable">
           <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
@@ -66,8 +67,7 @@
             <End Role="USERSTORY" EntitySet="USERSTORY" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KanbanDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -98,6 +98,7 @@
           <Property Name="STATUS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="PERIOD" Relationship="Self.FK_USERSTORY_ToTable_1" FromRole="USERSTORY" ToRole="PERIOD" />
           <NavigationProperty Name="PERSON" Relationship="Self.FK_USERSTORY_ToTable" FromRole="USERSTORY" ToRole="PERSON" />
+          <Property Name="PRIORITY" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_USERSTORY_ToTable_1">
           <End Role="PERIOD" Type="Self.PERIOD" Multiplicity="1" />
@@ -161,6 +162,7 @@
           <EntitySetMapping Name="USERSTORies">
             <EntityTypeMapping TypeName="KanbanDatabaseModel.USERSTORY">
               <MappingFragment StoreEntitySet="USERSTORY">
+                <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
                 <ScalarProperty Name="USERSTORY_SK" ColumnName="USERSTORY_SK" />
                 <ScalarProperty Name="TASK" ColumnName="TASK" />
                 <ScalarProperty Name="PERSON_FK" ColumnName="PERSON_FK" />

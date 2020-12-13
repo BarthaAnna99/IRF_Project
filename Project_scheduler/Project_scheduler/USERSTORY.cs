@@ -19,6 +19,7 @@ namespace Project_scheduler
         public int PERSON_FK { get; set; }
         public int PERIOD_FK { get; set; }
         public string STATUS { get; set; }
+        public string PRIORITY { get; set; }
     
         public virtual PERIOD PERIOD { get; set; }
         public virtual PERSON PERSON { get; set; }

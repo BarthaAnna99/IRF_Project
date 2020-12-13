@@ -74,7 +74,6 @@
     <Compile Include="Entities\UserStoryField.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Entities\UserStoryPriority.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,22 +90,27 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>KanbanModel.Context.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="KanbanModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>KanbanModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="KanbanModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>KanbanModel.edmx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="PERIOD.cs">
       <DependentUpon>KanbanModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="PERSON.cs">
       <DependentUpon>KanbanModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,6 +122,7 @@
     </Compile>
     <Compile Include="USERSTORY.cs">
       <DependentUpon>KanbanModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -136,9 +141,11 @@
     <EntityDeploy Include="KanbanModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KanbanModel.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EntityDeploy>
     <None Include="KanbanModel.edmx.diagram">
       <DependentUpon>KanbanModel.edmx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PERIOD.datasource" />
@@ -185,11 +192,13 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>KanbanModel.Context.cs</LastGenOutput>
       <DependentUpon>KanbanModel.edmx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="KanbanModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>KanbanModel.edmx</DependentUpon>
       <LastGenOutput>KanbanModel.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

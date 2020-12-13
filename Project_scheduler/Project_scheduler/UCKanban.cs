@@ -14,16 +14,11 @@ namespace Project_scheduler
     public partial class UCKanban : UserControl
     {
         KanbanDatabaseEntities context = new KanbanDatabaseEntities();
-        BindingList<UserStoryPriority> userStoryPriorities = new BindingList<UserStoryPriority>();
 
         public UCKanban()
         {
             InitializeComponent();
             
-            for (int i = 1; i <= 19; i++)
-            {
-                userStoryPriorities.Add(new UserStoryPriority { ID = i, priority = Priority.Közepes });
-            }
 
             var idoszakok = (from x in context.PERIODs select x.PERIOD_NAME).ToList();
             comboBox1.DataSource = idoszakok;
@@ -41,38 +36,31 @@ namespace Project_scheduler
                                   join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                   join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
                                   where p.PERIOD_NAME == idoszak && u.STATUS == "Backlog"
-                                  select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS };
+                                  select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
             var idoszak_kivalasztva = from u in context.USERSTORies
                                   join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                   join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
                                   where p.PERIOD_NAME == idoszak && u.STATUS == "Kiválasztva"
-                                  select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS };
+                                  select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
             var idoszak_folyamatban = from u in context.USERSTORies
                                       join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                       join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
                                       where p.PERIOD_NAME == idoszak && u.STATUS == "Folyamatban"
-                                      select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS };
+                                      select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
             var idoszak_kesz = from u in context.USERSTORies
                                      join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                      join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
                                      where p.PERIOD_NAME == idoszak && u.STATUS == "Kész"
-                                     select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS };
+                                     select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
 
             int szamlalo1 = 0;
             foreach (var item in idoszak_backlog)
             {
-                var enumkapcs = from x in userStoryPriorities
-                                where x.ID == item.USERSTORY_SK
-                                select x;
-
                 UserStoryField us = new UserStoryField();
                 us.Top = szamlalo1 * 80 + szamlalo1 * 10;
                 us.Left = 5;
                 us.ID = item.USERSTORY_SK;
-                foreach (var pr in enumkapcs)
-                {
-                    us.Priority = pr.priority;
-                }
+                us.Priority = (Priority)Enum.Parse(typeof(Priority), item.PRIORITY); //(YourEnum) Enum.Parse(typeof(YourEnum), yourString);
                 us.Text = item.TASK + "\n" + item.NAME;
                 panel_All.Controls.Add(us);
 
@@ -83,18 +71,11 @@ namespace Project_scheduler
             int szamlalo2 = 0;
             foreach (var item in idoszak_kivalasztva)
             {
-                var enumkapcs = from x in userStoryPriorities
-                                where x.ID == item.USERSTORY_SK
-                                select x;
-
                 UserStoryField us = new UserStoryField();
                 us.Top = szamlalo2 * 80 + szamlalo2 * 10;
                 us.Left = 5 + 190 + 20;
                 us.ID = item.USERSTORY_SK;
-                foreach (var pr in enumkapcs)
-                {
-                    us.Priority = pr.priority;
-                }
+                us.Priority = (Priority)Enum.Parse(typeof(Priority), item.PRIORITY);
                 us.Text = item.TASK + "\n" + item.NAME;
                 panel_All.Controls.Add(us);
 
@@ -105,18 +86,11 @@ namespace Project_scheduler
             int szamlalo3 = 0;
             foreach (var item in idoszak_folyamatban)
             {
-                var enumkapcs = from x in userStoryPriorities
-                                where x.ID == item.USERSTORY_SK
-                                select x;
-
                 UserStoryField us = new UserStoryField();
                 us.Top = szamlalo3 * 80 + szamlalo3 * 10;
                 us.Left = 5 + 2 * 190 + 2 * 20;
                 us.ID = item.USERSTORY_SK;
-                foreach (var pr in enumkapcs)
-                {
-                    us.Priority = pr.priority;
-                }
+                us.Priority = (Priority)Enum.Parse(typeof(Priority), item.PRIORITY);
                 us.Text = item.TASK + "\n" + item.NAME;
                 panel_All.Controls.Add(us);
 
@@ -127,18 +101,11 @@ namespace Project_scheduler
             int szamlalo4 = 0;
             foreach (var item in idoszak_kesz)
             {
-                var enumkapcs = from x in userStoryPriorities
-                                where x.ID == item.USERSTORY_SK
-                                select x;
-
                 UserStoryField us = new UserStoryField();
                 us.Top = szamlalo4 * 80 + szamlalo4 * 10;
                 us.Left = 5 + 3 * 190 + 3 * 20;
                 us.ID = item.USERSTORY_SK;
-                foreach (var pr in enumkapcs)
-                {
-                    us.Priority = pr.priority;
-                }
+                us.Priority = (Priority)Enum.Parse(typeof(Priority), item.PRIORITY);
                 us.Text = item.TASK + "\n" + item.NAME;
                 panel_All.Controls.Add(us);
 
