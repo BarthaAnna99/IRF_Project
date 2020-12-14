@@ -115,7 +115,7 @@ namespace Project_scheduler.Entities
             {
                 moving = false;
                 FUserStory fus = new FUserStory(ID);
-                fus.ShowDialog();
+                fus.Show();
             }
         }
 

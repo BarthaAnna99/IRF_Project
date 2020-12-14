@@ -34,6 +34,12 @@ namespace Project_scheduler
             uc.Dock = DockStyle.Fill;
         }
 
-
+        private void btnJelentes_Click(object sender, EventArgs e)
+        {
+            UCJelentes uc = new UCJelentes();
+            FoPanel.Controls.Clear();
+            FoPanel.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
     }
 }

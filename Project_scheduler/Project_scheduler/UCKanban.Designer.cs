@@ -124,7 +124,7 @@ namespace Project_scheduler
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1073, 14);
+            this.button1.Location = new System.Drawing.Point(1073, 29);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 51);
             this.button1.TabIndex = 18;
@@ -140,7 +140,7 @@ namespace Project_scheduler
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(22, 14);
+            this.button2.Location = new System.Drawing.Point(22, 29);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 51);
             this.button2.TabIndex = 19;

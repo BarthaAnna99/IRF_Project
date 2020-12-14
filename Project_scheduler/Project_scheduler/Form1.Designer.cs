@@ -33,12 +33,15 @@ namespace Project_scheduler
             this.btnJelentes = new System.Windows.Forms.Button();
             this.btnKanban = new System.Windows.Forms.Button();
             this.FoPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(43)))), ((int)(((byte)(38)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnJelentes);
             this.panel1.Controls.Add(this.btnKanban);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -60,6 +63,7 @@ namespace Project_scheduler
             this.btnJelentes.TabIndex = 1;
             this.btnJelentes.Text = "Jelentés";
             this.btnJelentes.UseVisualStyleBackColor = false;
+            this.btnJelentes.Click += new System.EventHandler(this.btnJelentes_Click);
             // 
             // btnKanban
             // 
@@ -85,6 +89,15 @@ namespace Project_scheduler
             this.FoPanel.Size = new System.Drawing.Size(1150, 783);
             this.FoPanel.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Project_scheduler.Properties.Resources.logo_transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(116, 112);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -99,6 +112,7 @@ namespace Project_scheduler
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -109,6 +123,7 @@ namespace Project_scheduler
         private System.Windows.Forms.Button btnKanban;
         private System.Windows.Forms.Button btnJelentes;
         public System.Windows.Forms.Panel FoPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
