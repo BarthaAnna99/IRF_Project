@@ -41,9 +41,9 @@ namespace Project_scheduler
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.pERSONBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pERSONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -151,6 +151,7 @@ namespace Project_scheduler
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(533, 79);
             this.textBox1.TabIndex = 10;
+            this.textBox1.Text = "User Story";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
@@ -167,14 +168,6 @@ namespace Project_scheduler
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pERSONBindingSource1
-            // 
-            this.pERSONBindingSource1.DataSource = typeof(Project_scheduler.PERSON);
-            // 
-            // pERSONBindingSource
-            // 
-            this.pERSONBindingSource.DataSource = typeof(Project_scheduler.PERSON);
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(245)))));
@@ -188,6 +181,14 @@ namespace Project_scheduler
             this.button2.Text = "Törlés";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pERSONBindingSource1
+            // 
+            this.pERSONBindingSource1.DataSource = typeof(Project_scheduler.PERSON);
+            // 
+            // pERSONBindingSource
+            // 
+            this.pERSONBindingSource.DataSource = typeof(Project_scheduler.PERSON);
             // 
             // FUserStory
             // 
