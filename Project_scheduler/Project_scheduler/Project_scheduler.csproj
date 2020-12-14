@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Diagram.cs" />
+    <Compile Include="Entities\Jelentes.cs" />
     <Compile Include="Entities\Priority.cs" />
     <Compile Include="Entities\UserStoryField.cs">
       <SubType>Component</SubType>
@@ -88,7 +89,6 @@
     <Compile Include="FUserStory.Designer.cs">
       <DependentUpon>FUserStory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jelentes.cs" />
     <Compile Include="KanbanModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,13 +203,9 @@
       <DependentUpon>KanbanModel.edmx</DependentUpon>
       <LastGenOutput>KanbanModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\logo_transparent1.png" />
     <None Include="Resources\logo_transparent.png" />
-    <None Include="Resources\109831.jpg" />
-    <None Include="Resources\excel_icon.png" />
-    <None Include="Resources\excel_icon11.png" />
-    <None Include="Resources\output-onlinepngtools.png" />
     <None Include="Resources\excel_icon2.png" />
-    <None Include="Resources\excel_icon1.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

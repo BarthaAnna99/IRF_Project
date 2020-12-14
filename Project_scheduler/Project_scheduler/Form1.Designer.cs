@@ -30,10 +30,10 @@ namespace Project_scheduler
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnJelentes = new System.Windows.Forms.Button();
             this.btnKanban = new System.Windows.Forms.Button();
             this.FoPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +48,15 @@ namespace Project_scheduler
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(168, 783);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Project_scheduler.Properties.Resources.logo_transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(116, 112);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
             // 
             // btnJelentes
             // 
@@ -88,15 +97,6 @@ namespace Project_scheduler
             this.FoPanel.Name = "FoPanel";
             this.FoPanel.Size = new System.Drawing.Size(1150, 783);
             this.FoPanel.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Project_scheduler.Properties.Resources.logo_transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 112);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 

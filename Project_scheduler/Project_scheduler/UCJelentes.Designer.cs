@@ -106,6 +106,8 @@ namespace Project_scheduler
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.Transparent;
+            this.chart1.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chart1.BackSecondaryColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.DataSource = this.DiagrambindingSource;
