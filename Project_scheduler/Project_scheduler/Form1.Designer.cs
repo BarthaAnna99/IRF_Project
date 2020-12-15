@@ -109,7 +109,7 @@ namespace Project_scheduler
             this.MaximumSize = new System.Drawing.Size(1332, 826);
             this.MinimumSize = new System.Drawing.Size(1332, 826);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Kanban";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
