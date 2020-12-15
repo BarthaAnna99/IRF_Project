@@ -70,7 +70,7 @@ namespace Project_scheduler
             var adatok = from u in context.USERSTORies
                          group u by u.PERSON_FK into x
                          join pr in context.People on x.Key equals pr.PERSON_SK
-                         select new
+                         select new 
                          {
                              Név = pr.NAME,
                              Összes = x.Count(),

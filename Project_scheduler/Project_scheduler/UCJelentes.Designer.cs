@@ -58,6 +58,7 @@ namespace Project_scheduler
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(246)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,7 +100,7 @@ namespace Project_scheduler
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(642, 312);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -130,7 +131,7 @@ namespace Project_scheduler
             series1.XValueMember = "Tipus";
             series1.YValueMembers = "Érték";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(392, 262);
+            this.chart1.Size = new System.Drawing.Size(392, 312);
             this.chart1.TabIndex = 15;
             this.chart1.Text = "chart1";
             // 
