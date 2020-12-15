@@ -68,9 +68,9 @@ namespace Project_scheduler
             this.lb_Backlog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Backlog.Location = new System.Drawing.Point(108, 120);
             this.lb_Backlog.Name = "lb_Backlog";
-            this.lb_Backlog.Size = new System.Drawing.Size(82, 25);
+            this.lb_Backlog.Size = new System.Drawing.Size(64, 25);
             this.lb_Backlog.TabIndex = 12;
-            this.lb_Backlog.Text = "Backlog";
+            this.lb_Backlog.Text = "label1";
             // 
             // lb_Kiv
             // 
@@ -79,9 +79,9 @@ namespace Project_scheduler
             this.lb_Kiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Kiv.Location = new System.Drawing.Point(378, 120);
             this.lb_Kiv.Name = "lb_Kiv";
-            this.lb_Kiv.Size = new System.Drawing.Size(112, 25);
+            this.lb_Kiv.Size = new System.Drawing.Size(64, 25);
             this.lb_Kiv.TabIndex = 13;
-            this.lb_Kiv.Text = "Kiválasztva";
+            this.lb_Kiv.Text = "label2";
             // 
             // lb_Foly
             // 
@@ -90,9 +90,9 @@ namespace Project_scheduler
             this.lb_Foly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Foly.Location = new System.Drawing.Point(651, 120);
             this.lb_Foly.Name = "lb_Foly";
-            this.lb_Foly.Size = new System.Drawing.Size(125, 25);
+            this.lb_Foly.Size = new System.Drawing.Size(64, 25);
             this.lb_Foly.TabIndex = 14;
-            this.lb_Foly.Text = "Folyamatban";
+            this.lb_Foly.Text = "label3";
             // 
             // lb_Kesz
             // 
@@ -101,9 +101,9 @@ namespace Project_scheduler
             this.lb_Kesz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Kesz.Location = new System.Drawing.Point(957, 120);
             this.lb_Kesz.Name = "lb_Kesz";
-            this.lb_Kesz.Size = new System.Drawing.Size(57, 25);
+            this.lb_Kesz.Size = new System.Drawing.Size(64, 25);
             this.lb_Kesz.TabIndex = 15;
-            this.lb_Kesz.Text = "Kész";
+            this.lb_Kesz.Text = "label4";
             // 
             // comboBox1
             // 

@@ -106,6 +106,7 @@ namespace Project_scheduler
             this.cb_Fontossag.Name = "cb_Fontossag";
             this.cb_Fontossag.Size = new System.Drawing.Size(143, 24);
             this.cb_Fontossag.TabIndex = 9;
+            this.cb_Fontossag.Text = "Közepes";
             // 
             // label2
             // 
@@ -130,6 +131,7 @@ namespace Project_scheduler
             this.cb_Allapot.Name = "cb_Allapot";
             this.cb_Allapot.Size = new System.Drawing.Size(133, 24);
             this.cb_Allapot.TabIndex = 7;
+            this.cb_Allapot.Text = "Backlog";
             // 
             // label3
             // 
@@ -206,6 +208,7 @@ namespace Project_scheduler
             this.Controls.Add(this.cb_Tulajdonos);
             this.Controls.Add(this.lb_Person);
             this.Controls.Add(this.panel2);
+            this.MaximumSize = new System.Drawing.Size(603, 369);
             this.Name = "FUserStory";
             this.Text = "FUserStory";
             ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource1)).EndInit();

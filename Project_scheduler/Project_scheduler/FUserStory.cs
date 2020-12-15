@@ -14,12 +14,18 @@ namespace Project_scheduler
     public partial class FUserStory : Form
     {
         KanbanDatabaseEntities context = new KanbanDatabaseEntities();
-
         int current_ID = 0;
+
         public FUserStory(int ID)
         {
             InitializeComponent();
 
+            GetCurrentUserStory(ID);
+
+        }
+
+        private void GetCurrentUserStory(int ID)
+        {
             var people_list = from x in context.People select x.NAME;
             cb_Tulajdonos.DataSource = people_list.ToList();
 
@@ -44,8 +50,6 @@ namespace Project_scheduler
                     cb_Fontossag.SelectedItem = item.PRIORITY;
                 }
             }
-            
-             
         }
 
         private void button1_Click(object sender, EventArgs e)

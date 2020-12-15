@@ -56,8 +56,6 @@ namespace Project_scheduler.Entities
             MouseDown += UserStoryField_MouseDown;
             MouseMove += UserStoryField_MouseMove;
             MouseUp += UserStoryField_MouseUp;
-
-
         }
 
         private void UserStoryField_MouseUp(object sender, MouseEventArgs e)

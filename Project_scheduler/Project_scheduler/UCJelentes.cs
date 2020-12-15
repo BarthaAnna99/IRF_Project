@@ -22,10 +22,8 @@ namespace Project_scheduler
         {
             InitializeComponent();
 
-
             GetJelentes();
             dataGridView1.DataSource = jelentes.ToList();
-            //GetDiagram();
         }
 
         private void GetDiagram()
@@ -46,22 +44,23 @@ namespace Project_scheduler
             foreach (var item in adatok)
             {
                 Diagram d = new Diagram();
-                d.Tipus = "Backlog";
+                d.Tipus = Resource1.Backlog;
                 d.Érték = item.Backlog;
                 diagrams.Add(d);
                 Diagram d2 = new Diagram();
-                d2.Tipus = "Kiválasztva";
+                d2.Tipus = Resource1.Kiválasztva;
                 d2.Érték = item.Kiválasztva;
                 diagrams.Add(d2);
                 Diagram d3 = new Diagram();
-                d3.Tipus = "Folyamatban";
+                d3.Tipus = Resource1.Folyamatban;
                 d3.Érték = item.Folyamatban;
                 diagrams.Add(d3);
                 Diagram d4 = new Diagram();
-                d4.Tipus = "Kész";
+                d4.Tipus = Resource1.Kész;
                 d4.Érték = item.Kész;
                 diagrams.Add(d4);
             }
+
             DiagrambindingSource.DataSource = diagrams.ToList();
             chart1.DataBind();
         }
@@ -75,11 +74,12 @@ namespace Project_scheduler
                          {
                              Név = pr.NAME,
                              Összes = x.Count(),
-                             Backlog = x.Where(v => v.STATUS == "Backlog").Count(),
-                             Kiválasztva = x.Where(v => v.STATUS == "Kiválasztva").Count(),
-                             Folyamatban = x.Where(v => v.STATUS == "Folyamatban").Count(),
-                             Kész = x.Where(v => v.STATUS == "Kész").Count(),
+                             Backlog = x.Where(v => v.STATUS == Resource1.Backlog).Count(),
+                             Kiválasztva = x.Where(v => v.STATUS == Resource1.Kiválasztva).Count(),
+                             Folyamatban = x.Where(v => v.STATUS == Resource1.Folyamatban).Count(),
+                             Kész = x.Where(v => v.STATUS == Resource1.Kész).Count(),
                          };
+
             foreach (var item in adatok.ToList())
             {
                 Jelentes j = new Jelentes();

@@ -79,7 +79,7 @@ namespace Project_scheduler
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 98);
+            this.dataGridView1.Location = new System.Drawing.Point(40, 153);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -114,7 +114,7 @@ namespace Project_scheduler
             legend1.Name = "Legend1";
             legend1.TitleAlignment = System.Drawing.StringAlignment.Far;
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(719, 98);
+            this.chart1.Location = new System.Drawing.Point(726, 153);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chart1.PaletteCustomColors = new System.Drawing.Color[] {

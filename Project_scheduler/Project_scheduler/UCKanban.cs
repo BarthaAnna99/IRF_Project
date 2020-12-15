@@ -30,6 +30,10 @@ namespace Project_scheduler
             var idoszakok = (from x in context.PERIODs select x.PERIOD_NAME).ToList();
             comboBox1.DataSource = idoszakok;
             comboBox1.SelectedItem = "12.14. - 12.20.";
+            lb_Backlog.Text = Resource1.Backlog;
+            lb_Kiv.Text = Resource1.Kiválasztva;
+            lb_Foly.Text = Resource1.Folyamatban;
+            lb_Kesz.Text = Resource1.Kész;
 
             GetKanbanField();
         }
@@ -43,22 +47,22 @@ namespace Project_scheduler
             var idoszak_backlog = from u in context.USERSTORies
                                   join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                   join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
-                                  where p.PERIOD_NAME == idoszak && u.STATUS == "Backlog"
+                                  where p.PERIOD_NAME == idoszak && u.STATUS == Resource1.Backlog
                                   select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
             var idoszak_kivalasztva = from u in context.USERSTORies
                                   join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                   join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
-                                  where p.PERIOD_NAME == idoszak && u.STATUS == "Kiválasztva"
+                                  where p.PERIOD_NAME == idoszak && u.STATUS == Resource1.Kiválasztva
                                   select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
             var idoszak_folyamatban = from u in context.USERSTORies
                                       join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                       join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
-                                      where p.PERIOD_NAME == idoszak && u.STATUS == "Folyamatban"
+                                      where p.PERIOD_NAME == idoszak && u.STATUS == Resource1.Folyamatban
                                       select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
             var idoszak_kesz = from u in context.USERSTORies
                                      join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                      join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
-                                     where p.PERIOD_NAME == idoszak && u.STATUS == "Kész"
+                                     where p.PERIOD_NAME == idoszak && u.STATUS == Resource1.Kész
                                      select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
 
             int szamlalo1 = 0;
@@ -248,22 +252,22 @@ namespace Project_scheduler
             var idoszak_backlog = from u in context.USERSTORies
                                   join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                   join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
-                                  where p.PERIOD_NAME == idoszak && u.STATUS == "Backlog"
+                                  where p.PERIOD_NAME == idoszak && u.STATUS == Resource1.Backlog
                                   select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
             var idoszak_kivalasztva = from u in context.USERSTORies
                                       join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                       join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
-                                      where p.PERIOD_NAME == idoszak && u.STATUS == "Kiválasztva"
+                                      where p.PERIOD_NAME == idoszak && u.STATUS == Resource1.Kiválasztva
                                       select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
             var idoszak_folyamatban = from u in context.USERSTORies
                                       join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                       join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
-                                      where p.PERIOD_NAME == idoszak && u.STATUS == "Folyamatban"
+                                      where p.PERIOD_NAME == idoszak && u.STATUS == Resource1.Folyamatban
                                       select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
             var idoszak_kesz = from u in context.USERSTORies
                                join p in context.PERIODs on u.PERIOD_FK equals p.PERIOD_SK
                                join pr in context.People on u.PERSON_FK equals pr.PERSON_SK
-                               where p.PERIOD_NAME == idoszak && u.STATUS == "Kész"
+                               where p.PERIOD_NAME == idoszak && u.STATUS == Resource1.Kész
                                select new { u.USERSTORY_SK, u.TASK, pr.NAME, p.PERIOD_NAME, u.STATUS, u.PRIORITY };
 
             string[] headers = new string[] {
