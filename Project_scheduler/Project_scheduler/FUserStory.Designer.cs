@@ -209,6 +209,7 @@ namespace Project_scheduler
             this.Controls.Add(this.lb_Person);
             this.Controls.Add(this.panel2);
             this.MaximumSize = new System.Drawing.Size(603, 369);
+            this.MinimumSize = new System.Drawing.Size(603, 369);
             this.Name = "FUserStory";
             this.Text = "UserStory";
             ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource1)).EndInit();

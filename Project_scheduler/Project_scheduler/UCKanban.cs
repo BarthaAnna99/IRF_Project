@@ -72,7 +72,7 @@ namespace Project_scheduler
                 us.Top = szamlalo1 * 80 + szamlalo1 * 10;
                 us.Left = 5;
                 us.ID = item.USERSTORY_SK;
-                us.Priority = (Priority)Enum.Parse(typeof(Priority), item.PRIORITY); //(YourEnum) Enum.Parse(typeof(YourEnum), yourString);
+                us.Priority = (Priority)Enum.Parse(typeof(Priority), item.PRIORITY);
                 us.Text = item.TASK + "\n" + item.NAME;
                 panel_All.Controls.Add(us);
 
